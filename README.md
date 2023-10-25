@@ -10,6 +10,8 @@ El cliente, desarrollado en React.js, proporciona una interfaz de usuario atract
 
 La aplicación se encuentra desplegada en la siguiente URL del cliente: [Cliente en Netlify](https://653871d5ec711e2a9ac8b05d--zesty-donut-873db9.netlify.app/).
 
+Para ello tambien es necesario ejecutar el servidor https://github.com/Alejandro9912/server_series de manera local
+
 ![Logo de la aplicación](utils/img/deploy.png)
 
 Para iniciar sesión y explorar la aplicación, puedes utilizar las siguientes credenciales de prueba y asi validar los permisos de cada una:
