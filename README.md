@@ -64,25 +64,3 @@ Si no estás satisfecho con la herramienta de compilación y las opciones de con
 En cambio, copiará todos los archivos de configuración y las dependencias transitivas (webpack, Babel, ESLint, etc.) directamente en tu proyecto para que tengas un control total sobre ellos. Todos los comandos excepto `eject` seguirán funcionando, pero apuntarán a los scripts copiados para que puedas ajustarlos. En este punto, estarás por tu cuenta.
 
 No es necesario usar `eject`. El conjunto de características preseleccionadas es adecuado para despliegues pequeños y medianos, y no debes sentirte obligado a usar esta función. Sin embargo, entendemos que esta herramienta no sería útil si no pudieras personalizarla cuando estés listo.
-
-## Aprende Más
-
-Puedes obtener más información en la [documentación de Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
-
-Para aprender React, consulta la [documentación de React](https://reactjs.org/).
-
-### División de Código
-
-Esta sección se ha trasladado aquí: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Análisis del Tamaño del Conjunto
-
-Esta sección se ha trasladado aquí: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Creación de una Aplicación Web Progresiva
-
-Esta sección se ha trasladado aquí: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Configuración Avanzada
-
-Esta sección se ha traslad
