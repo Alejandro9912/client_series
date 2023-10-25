@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"; // Importa Link de react-router-dom
 export function Home() {
   return (
     <div className="App">
-      <Container textAlign="center">
+      <Container textAlign="center" style={{ marginTop: "200px" }}>
         <Header as="h1" icon>
           <Icon name="film" />
           Bienvenido a la API de Series
@@ -13,7 +13,7 @@ export function Home() {
             ¡Explora nuestras series favoritas!
           </Header.Subheader>
         </Header>
-        <div style={{ marginTop: "20px" }}>
+        <div style={{ marginTop: "100px" }}>
           {" "}
           {/* Agregamos un margen superior para separar el botón */}
           <Link to="/admin/">
