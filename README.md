@@ -8,9 +8,7 @@ Este proyecto es una aplicación cliente-servidor desarrollada con Express para 
 
 El cliente, desarrollado en React.js, proporciona una interfaz de usuario atractiva y receptiva.
 
-La aplicación se encuentra desplegada en la siguiente URL del cliente: [Cliente en Netlify](https://653871d5ec711e2a9ac8b05d--zesty-donut-873db9.netlify.app/).
-
-Para ello tambien es necesario ejecutar el servidor https://github.com/Alejandro9912/server_series de manera local
+La aplicación se encuentra desplegada en la siguiente URL del cliente: [Cliente en Netlify](https://653871d5ec711e2a9ac8b05d--zesty-donut-873db9.netlify.app/). Esta misma se encuentra conectada al servidor y la base de datos previamente mencionadas.
 
 ![Logo de la aplicación](utils/img/deploy.png)
 
