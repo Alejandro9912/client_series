@@ -1,8 +1,16 @@
 # CLIENTE para Registro de Series de Televisión
 
-Este proyecto es una aplicación cliente-servidor desarrollada con Express para el servidor y React.js para el cliente. El servidor se encarga de gestionar la lógica de la aplicación y utiliza una base de datos MongoDBAtlas para almacenar datos. El cliente, desarrollado en React.js, proporciona una interfaz de usuario atractiva y receptiva.
+![Logo de la aplicación](utils/img/deploy1.png)
+
+Este proyecto es una aplicación cliente-servidor desarrollada con Express para el servidor y React.js para el cliente. El servidor se encarga de gestionar la lógica de la aplicación y utiliza una base de datos MongoDBAtlas para almacenar datos. 
+
+![Logo de la aplicación](utils/img/db2.png)
+
+El cliente, desarrollado en React.js, proporciona una interfaz de usuario atractiva y receptiva.
 
 La aplicación se encuentra desplegada en la siguiente URL del cliente: [Cliente en Netlify](https://653871d5ec711e2a9ac8b05d--zesty-donut-873db9.netlify.app/).
+
+![Logo de la aplicación](utils/img/deploy.png)
 
 Para iniciar sesión y explorar la aplicación, puedes utilizar las siguientes credenciales de prueba y asi validar los permisos de cada una:
 
