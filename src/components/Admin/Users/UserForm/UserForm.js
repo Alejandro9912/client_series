@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Form, Image } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 import { useFormik } from "formik";
 import { useDropzone } from "react-dropzone";
 import { User } from "../../../../api";
@@ -66,15 +66,15 @@ export function UserForm(props) {
           name="firstName"
           placeholder="Nombre"
           onChange={formik.handleChange}
-          value={formik.values.firstname}
-          error={formik.errors.firstname}
+          value={formik.values.firstName}
+          error={formik.errors.firstName}
         />
         <Form.Input
           name="lastName"
           placeholder="Apellidos"
           onChange={formik.handleChange}
-          value={formik.values.lastname}
-          error={formik.errors.lastname}
+          value={formik.values.lastName}
+          error={formik.errors.lastName}
         />
       </Form.Group>
 

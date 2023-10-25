@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { Image, Button, Icon, Confirm } from "semantic-ui-react";
-import { image } from "../../../../assets";
-import { User } from "../../../../api";
-import { useAuth } from "../../../../hooks";
+import { Button, Icon, Confirm } from "semantic-ui-react";
 import { BasicModal } from "../../../Shared";
-import { ENV } from "../../../../utils";
-import { UserForm } from "../UserForm";
-import "./UserItem.scss";
+import { Serie } from "../../../../api";
+import { useAuth } from "../../../../hooks";
+import { SerieForm } from "../SerieForm";
+import "./SerieItem.scss";
 
-const userController = new User();
+const serieController = new Serie();
 
-export function UserItem(props) {
-  const { user, onReload } = props;
+export function SerieItem(props) {
+  const { serie, onReload } = props;
   const { accessToken } = useAuth();
 
   const [showModal, setShowModal] = useState(false);
@@ -24,25 +22,25 @@ export function UserItem(props) {
   const onOpenCloseModal = () => setShowModal((prevState) => !prevState);
   const onOpenCloseConfirm = () => setShowConfirm((prevState) => !prevState);
 
-  const openUpdateUser = () => {
-    setTitleModal(`Actualizar ${user.email}`);
+  const openUpdateSerie = () => {
+    setTitleModal(`Actualizar serie: ${serie.title}`);
     onOpenCloseModal();
   };
 
-  const openDesactivateActivateConfim = () => {
+  const openDesactivateActiveConfirm = () => {
     setIsDelete(false);
     setConfirmMessage(
-      user.active
-        ? `Desactivar usuario ${user.email}`
-        : `Activar usuario ${user.email}`
+      serie.active
+        ? `Desactivar la serie ${serie.title}`
+        : `Activar la serie ${serie.title}`
     );
     onOpenCloseConfirm();
   };
 
   const onActivateDesactivate = async () => {
     try {
-      await userController.updateUser(accessToken, user._id, {
-        active: !user.active,
+      await serieController.updateSerie(accessToken, serie._id, {
+        active: !serie.active,
       });
       onReload();
       onOpenCloseConfirm();
@@ -53,13 +51,13 @@ export function UserItem(props) {
 
   const openDeleteConfirm = () => {
     setIsDelete(true);
-    setConfirmMessage(`Eliminar usuario ${user.email}`);
+    setConfirmMessage(`Eliminar la serie ${serie.title}`);
     onOpenCloseConfirm();
   };
 
   const onDelete = async () => {
     try {
-      await userController.deleteUser(accessToken, user._id);
+      await serieController.deleteSerie(accessToken, serie._id);
       onReload();
       onOpenCloseConfirm();
     } catch (error) {
@@ -69,32 +67,22 @@ export function UserItem(props) {
 
   return (
     <>
-      <div className="user-item">
-        <div className="user-item__info">
-          <Image
-            avatar
-            src={
-              user.avatar ? `${ENV.BASE_PATH}/${user.avatar}` : image.noAvatar
-            }
-          />
-          <div>
-            <p>
-              {user.firstName} {user.lastName}
-            </p>
-            <p>{user.email}</p>
-          </div>
+      <div className="serie-item">
+        <div className="serie-item__info">
+          <span className="serie-item__info-title">{serie.title}</span>
+          <span className="serie-item__info-path">{serie.path}</span>
         </div>
 
         <div>
-          <Button icon primary onClick={openUpdateUser}>
+          <Button icon primary onClick={openUpdateSerie}>
             <Icon name="pencil" />
           </Button>
           <Button
             icon
-            color={user.active ? "orange" : "teal"}
-            onClick={openDesactivateActivateConfim}
+            color={serie.active ? "orange" : "teal"}
+            onClick={openDesactivateActiveConfirm}
           >
-            <Icon name={user.active ? "ban" : "check"} />
+            <Icon name={serie.active ? "ban" : "check"} />
           </Button>
           <Button icon color="red" onClick={openDeleteConfirm}>
             <Icon name="trash" />
@@ -103,7 +91,7 @@ export function UserItem(props) {
       </div>
 
       <BasicModal show={showModal} close={onOpenCloseModal} title={titleModal}>
-        <UserForm close={onOpenCloseModal} onReload={onReload} user={user} />
+        <SerieForm onClose={onOpenCloseModal} onReload={onReload} serie={serie} />
       </BasicModal>
 
       <Confirm

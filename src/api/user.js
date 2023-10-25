@@ -80,6 +80,7 @@ export class User {
       if (!data.password) {
         delete data.password;
       }
+      console.log(data);
 
       const formData = new FormData();
       Object.keys(data).forEach((key) => {
@@ -90,7 +91,7 @@ export class User {
         formData.append("avatar", data.fileAvatar);
       }
 
-      const url = `${ENV.BASE_API}/${ENV.API_ROUTES.USER}/${idUser}`;
+      const url = `${this.baseApi}/${ENV.API_ROUTES.USER}/${idUser}`;
       const params = {
         method: "PUT",
         headers: {
@@ -98,9 +99,15 @@ export class User {
         },
         body: formData,
       };
-
+      
       const response = await fetch(url, params);
       const result = await response.json();
+      console.log(response);
+
+      if (!response.ok) {
+        // Maneja el error aquí
+        throw new Error(`Error ${response.status}: ${result.error}`);
+      }
 
       if (response.status !== 200) throw result;
 

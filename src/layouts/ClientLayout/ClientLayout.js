@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-export  function ClientLayout(props) {
-  const { children } = props;
+export function ClientLayout(props) {
+    const {children} =props
   return (
     <div>
-      <h2>Esta cargando el ClientLayout</h2>
-      {children}
+        {/* <h2>Se esta usando el admin Layout</h2> */}
+        {children}
     </div>
-  );
+  )
 }

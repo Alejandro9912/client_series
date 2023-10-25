@@ -2,8 +2,8 @@ import * as Yup from "yup";
 
 export function initialValues(user) {
   return {
-    firstName: user?.firstname || "",
-    lastName: user?.lastname || "",
+    firstName: user?.firstName || "",
+    lastName: user?.lastName || "",
     email: user?.email || "",
     role: user?.role || "",
     password: "",
